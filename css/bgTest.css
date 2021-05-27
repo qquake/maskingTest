@@ -1,0 +1,444 @@
+/* common */
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+main {
+    position: relative;
+    height: 100%;
+}
+
+/* assets */
+.hide {
+    display: none;
+}
+
+/* bg, masking, illu */
+#bg {
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#msk {
+    position: absolute;
+}
+
+#combined {
+    position: absolute;
+    bottom: 60px;
+    right: -80px;
+}
+
+.bg__color--black {
+    background-color: #111111;
+}
+
+.bg__color--skyblue {
+    background-color: #87ceff;
+}
+
+.bg__color--orange {
+    background-color: #EE6723;
+}
+
+.bg__effect--rain {
+    background-color: #002033;
+}
+
+.bg__effect--snow {
+    background-color: #222222;
+}
+
+.msk__circle {
+    bottom: 100px;
+    right: -20px;
+    width: 250px;
+    height: 250px;
+}
+
+.msk__circle img {
+    width: 250px;
+    height: 250px;
+    -webkit-mask-image: url("../images/msk_circle.png");
+    -webkit-mask-position: 0px 0px;
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.msk__raindrop {
+    bottom: 80px;
+    right: -20px;
+    width: 250px;
+    height: 380px;
+}
+
+.msk__raindrop img {
+    width: 380px;
+    height: 380px;
+    -webkit-mask-image: url("../images/msk_raindrop.png");
+    -webkit-mask-position: 0px 0px;
+    -webkit-mask-size: 66%;
+    -webkit-mask-repeat: no-repeat;
+}
+
+/* animation */
+.effect__rain {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.rain {
+    background: white;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    height: 50px;
+    position: absolute;
+    width: 1px;
+}
+  
+.rain:nth-of-type(1) {
+    animation-name: rain-1;
+    animation-delay: 3s;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    left: 52%;
+    opacity: 0.44;
+    top: -92%;
+}
+
+@Keyframes rain-1 {
+    0% {
+        left: 52%;
+        opacity: 0.44;
+        top: -92%;
+    }
+    100% {
+        opacity: 0;
+        top: 132%;
+    }
+}
+.rain:nth-of-type(2) {
+    animation-name: rain-2;
+    animation-delay: 1s;
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+    left: 54%;
+    opacity: 0.47;
+    top: -80%;
+}
+
+@Keyframes rain-2 {
+    0% {
+        left: 54%;
+        opacity: 0.47;
+        top: -80%;
+    }
+    100% {
+        opacity: 0;
+        top: 120%;
+    }
+}
+.rain:nth-of-type(3) {
+    animation-name: rain-3;
+    animation-delay: 7s;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    left: 53%;
+    opacity: 0.41;
+    top: -68%;
+}
+
+@Keyframes rain-3 {
+    0% {
+        left: 53%;
+        opacity: 0.41;
+        top: -68%;
+    }
+    100% {
+        opacity: 0;
+        top: 108%;
+    }
+}
+.rain:nth-of-type(4) {
+    animation-name: rain-4;
+    animation-delay: 0s;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    left: 66%;
+    opacity: 0.43;
+    top: -93%;
+}
+
+@Keyframes rain-4 {
+    0% {
+        left: 66%;
+        opacity: 0.43;
+        top: -93%;
+    }
+    100% {
+        opacity: 0;
+        top: 133%;
+    }
+}
+.rain:nth-of-type(5) {
+    animation-name: rain-5;
+    animation-delay: 14s;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    left: 39%;
+    opacity: 0.31;
+    top: -68%;
+}
+
+@Keyframes rain-5 {
+    0% {
+        left: 39%;
+        opacity: 0.31;
+        top: -68%;
+    }
+    100% {
+        opacity: 0;
+        top: 108%;
+    }
+}
+.rain:nth-of-type(6) {
+    animation-name: rain-6;
+    animation-delay: 0s;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    left: 90%;
+    opacity: 0.54;
+    top: -77%;
+}
+
+@Keyframes rain-6 {
+    0% {
+        left: 90%;
+        opacity: 0.54;
+        top: -77%;
+    }
+    100% {
+        opacity: 0;
+        top: 117%;
+    }
+}
+.rain:nth-of-type(7) {
+    animation-name: rain-7;
+    animation-delay: 19s;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    left: 50%;
+    opacity: 0.31;
+    top: -61%;
+}
+
+@Keyframes rain-7 {
+    0% {
+        left: 50%;
+        opacity: 0.31;
+        top: -61%;
+    }
+    100% {
+        opacity: 0;
+        top: 101%;
+    }
+}
+.rain:nth-of-type(8) {
+    animation-name: rain-8;
+    animation-delay: 4s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    left: 96%;
+    opacity: 0.4;
+    top: -91%;
+}
+
+@Keyframes rain-8 {
+    0% {
+        left: 96%;
+        opacity: 0.4;
+        top: -91%;
+    }
+    100% {
+        opacity: 0;
+        top: 131%;
+    }
+}
+.rain:nth-of-type(9) {
+    animation-name: rain-9;
+    animation-delay: 15s;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    left: 90%;
+    opacity: 0.39;
+    top: -97%;
+}
+
+@Keyframes rain-9 {
+    0% {
+        left: 90%;
+        opacity: 0.39;
+        top: -97%;
+    }
+    100% {
+        opacity: 0;
+        top: 137%;
+    }
+}
+.rain:nth-of-type(10) {
+    animation-name: rain-10;
+    animation-delay: 19s;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    left: 27%;
+    opacity: 0.32;
+    top: -64%;
+}
+
+@Keyframes rain-10 {
+    0% {
+        left: 27%;
+        opacity: 0.32;
+        top: -64%;
+    }
+    100% {
+        opacity: 0;
+        top: 104%;
+    }
+}
+
+.effect__snow {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+@-webkit-keyframes snowflakes-fall {
+    0% {
+        top: -10%
+    }
+    100% {
+        top: 100%
+    }
+}
+
+@-webkit-keyframes snowflakes-shake {
+    0% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px)
+    }
+    50% {
+        -webkit-transform: translateX(80px);
+        transform: translateX(80px)
+    }
+    100% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px)
+    }
+}
+
+@keyframes snowflakes-fall {
+    0% {
+        top: -10%
+    }
+    100% {
+        top: 100%
+    }
+}
+
+@keyframes snowflakes-shake {
+    0% {
+        transform: translateX(0px)
+    }
+    50% {
+        transform: translateX(80px)
+    }
+    100% {
+        transform: translateX(0px)
+    }
+}
+
+.snowflake {
+    position: absolute;
+    box-shadow: 0 0 10px 5px rgb(255 255 255);
+    top: -10%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+    -webkit-animation-duration: 10s, 3s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state:running, running;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration:10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running
+}
+
+.snowflake:nth-of-type(0) {
+    left: 1%;
+    -webkit-animation-delay: 0s, 0s;
+    animation-delay: 0s, 0s
+}
+
+.snowflake:nth-of-type(1) {
+    left: 10%;
+    -webkit-animation-delay: 1s, 1s;
+    animation-delay: 1s, 1s
+}
+
+.snowflake:nth-of-type(2) {
+    left: 20%;
+    -webkit-animation-delay: 6s, .5s;
+    animation-delay: 6s, .5s
+}
+
+.snowflake:nth-of-type(3) {
+    left: 30%;
+    -webkit-animation-delay: 4s, 2s;
+    animation-delay: 4s, 2s
+}
+
+.snowflake:nth-of-type(4) {
+    left: 40%;
+    -webkit-animation-delay: 2s, 2s;
+    animation-delay: 2s, 2s
+}
+
+.snowflake:nth-of-type(5) {
+    left: 50%;
+    -webkit-animation-delay: 8s, 3s;
+    animation-delay:8s, 3s
+}
+
+.snowflake:nth-of-type(6) {
+    left: 60%;
+    -webkit-animation-delay: 6s, 2s;
+    animation-delay: 6s,2s
+}
+
+.snowflake:nth-of-type(7) {
+    left: 70%;
+    -webkit-animation-delay: 2.5s, 1s;
+    animation-delay: 2.5s,1s
+}
+
+.snowflake:nth-of-type(8) {
+    left: 80%;
+    -webkit-animation-delay: 1s, 0s;
+    animation-delay: 1s, 0s
+}
+
+.snowflake:nth-of-type(9) {
+    left: 90%;
+    -webkit-animation-delay: 3s, 1.5s;
+    animation-delay:3s, 1.5s
+}

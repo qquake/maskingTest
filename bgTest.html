@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <!-- mobile safari : full screen  -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- mobile safari : remove status bar  -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- CSS (library) -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./library/normalize/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./library/bootstrap-5.0.1-dist/css/bootstrap.min.css" />
+
+    <!-- CSS (custom) -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/bgTest.css" />
+
+    <!-- CSS for this html -->
+    <style>
+        .testButtons {
+            position: fixed;
+            top: 40px;
+            left: 20px;
+        }
+
+        .testButtons h3 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .testButtons button {
+            font-size: 13px;
+            border: none;
+            background-color: #ffffff;
+        }
+    </style>
+
+    <title>Masking test</title>
+</head>
+
+<body>
+
+    <header></header>
+
+    <main id="bg" class="bg__color--skyblue">
+        <!-- component -->
+        <div class="effect__rain hide">
+            <i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i><i class="rain"></i>
+        </div>
+        <!-- component -->
+        <div class="effect__snow hide">
+            <div class="snowflake"></div><div class="snowflake"></div><div class="snowflake"></div><div class="snowflake"></div><div class="snowflake"></div><div class="snowflake"></div><div class="snowflake"></div><div class="snowflake"></div><div class="snowflake"></div>
+        </div>
+
+        <div id="msk" class="msk__raindrop">
+            <img src="./images/img_forest.png" class="img__forest" crossorigin="use-credentials">
+            <img src="./images/img_cat.jpg" class="img__cat hide">
+        </div>
+
+        <div id="combined" class="hide">
+            <img src="./images/img_cooking_combined.png" class="img__cooking" alt="image">
+        </div>
+    </main>
+
+    <div class="testButtons">
+        <div>
+            <h3>배경</h3>
+            <button type="button" id="bgColorBlack">검정색</button>
+            <button type="button" id="bgColorSkyblue">하늘색</button>
+            <button type="button" id="bgColorOrange">주황색</button><br/>
+            <button type="button" id="bgAnimRain">비</button>
+            <button type="button" id="bgAnimSnow">눈</button>
+        </div>
+        <div>
+            <h3>마스킹</h3>
+            <button type="button" id="mskRaindrop">빗방울</button>
+            <button type="button" id="mskCircle">원</button>
+        </div>
+        <div>
+            <h3>이미지</h3>
+            <button type="button" id="imgForest">산책</button>
+            <button type="button" id="imgCat">고양이</button>
+        </div>
+        <div>
+            <h3>특수</h3>
+            <button type="button" id="combImg">쿠킹</button>
+        </div>
+    </div>
+
+    <footer></footer>
+
+    <!-- JS (library) -->
+    <script type="text/javascript" src="./library/jquery-3.4.1/jquery-3.4.1.min.js"></script>
+
+    <!-- JS (custom) -->
+    <script type="text/javascript" src=""></script>
+
+    <!-- script for this html -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#bgColorBlack').click(function(){
+                $('#bg').removeClass().addClass('bg__color--black')
+            })
+            $('#bgColorSkyblue').click(function(){
+                $('#bg').removeClass().addClass('bg__color--skyblue')
+            })
+            $('#bgColorOrange').click(function(){
+                $('#bg').removeClass().addClass('bg__color--orange')
+            })
+            $('#bgAnimRain').click(function(){
+                $('#bg').removeClass().addClass('bg__effect--rain');
+                $('.effect__rain').removeClass('hide');
+                $('.effect__snow').addClass('hide');
+            })
+            $('#bgAnimSnow').click(function(){
+                $('#bg').removeClass().addClass('bg__effect--snow')
+                $('.effect__snow').removeClass('hide');
+                $('.effect__rain').addClass('hide');
+            })
+
+            $('#mskRaindrop').click(function(){
+                $('#msk').removeClass().addClass('msk__raindrop');
+                $('#msk').removeClass('hide');
+                $('#combined').addClass('hide');
+            })
+            $('#mskCircle').click(function(){
+                $('#msk').removeClass().addClass('msk__circle');
+                $('#msk').removeClass('hide');
+                $('#combined').addClass('hide');
+            })
+
+            $('#imgForest').click(function(){
+                $('.img__forest').removeClass('hide');
+                $('.img__cat').addClass('hide');
+                $('#msk').removeClass('hide');
+                $('#combined').addClass('hide');
+            })
+            $('#imgCat').click(function(){
+                $('.img__cat').removeClass('hide');
+                $('.img__forest').addClass('hide');
+                $('#msk').removeClass('hide');
+                $('#combined').addClass('hide');
+            })
+
+            $('#combImg').click(function(){
+                $('#combined').removeClass('hide');
+                $('#msk').addClass('hide');
+            })
+        });
+    </script>
+</body>
+</html>
